@@ -1,0 +1,12 @@
+A.I choose the data Structure is Hash Table,Because we have implement the vehicles parts in (Key) and Cost in (Value),
+ In hash table we can store, insert and delete operations.If we need to search the price of any part we can search easily by hash table.
+
+B.I choose data Structure is Array,Because Arrays are collection of similar datatype here we have to mark the attendance of the student which is same datatype string(absent/present) and the roll no of student can store in the 
+ index of the array.The number of Students is fixed for a Class.If Student is present we can assign Present to their index roll no.
+
+C.I choose data Structure is Doubly Linked List.Doubly linked lists have previous and next two way traversal ,so in music palayer we can travers forward and backward using doubly linked list.
+ we can navigate by previous and next pointer and store the songs in nodes as data by this we can easily Add/Remove/Find any song by our Doubly Linked List. 
+
+D.I choose data Structure is Stack.Its like a pile of Cds kept on top of each other in this case its bracktes.If it is a starting 
+ bracket like('(','{','[') then push it to stack.If it is a closing bracket (')','}',']')then pop from stack and if the popped bracket is the
+ matching our starting bracket then brackets are not closed properly.
