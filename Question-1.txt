@@ -1,0 +1,142 @@
+
+package dll;
+import java.util.Scanner;
+public class Dll {
+
+	    class Node{
+			   
+	        int Data;  
+	        Node previous;  
+	        Node next;  
+	   
+	        public Node(int Data) {  
+	            this.Data = Data;  
+	        }  
+	    } 
+	    Node head, tail = null; 
+	    public void insert(int Data) {  
+
+	        Node newNode = new Node(Data); 
+	        if(head == null) {  
+	            head = tail = newNode;  
+	            head.previous = null; 
+	            tail.next = null;  
+	        }  
+	        else {  
+	            tail.next = newNode; 
+	            newNode.previous = tail; 
+	            tail = newNode; 
+	            tail.next = null;  
+	        }  
+	     
+	    }  
+	    public void delete()
+	    {
+	        if(head == null) {  
+	            return;  
+	        }  
+	        else {  
+
+	            if(head != tail) {  
+	                 head = head.next; 
+	                 head.previous = null;  
+	            } 
+	            else {  
+	                head = tail = null;  
+	            }  
+	        } 
+	     
+	    }  
+	    public void search(int value) { 
+	         int i = 1;  
+	         boolean flag = false;  
+	         Node temp = head;  
+	         if(head == null) 
+	         {  
+	            System.out.println("List is empty");  
+	            return;  
+	         }  
+	        while(temp != null) {  
+	            
+	            if(temp.Data == value) {  
+	                flag = true;  
+	                break;  
+	            }  
+	            temp= temp.next;  
+	            i++;  
+	        }  
+	        if(flag)  
+	             System.out.println("Node is present in the list at the position : " + i);  
+	        else  
+	             System.out.println("Node is not present in the list");  
+	    }  
+	    public void Display() {  
+	     
+	         Node current = head;  
+	         if(head == null)
+	        {  
+	            System.out.println("Doubly linked list is empty:");       
+	        }  
+	      
+	        while(current != null) {  
+	            System.out.print(current.Data + " ");  
+	            current = current.next; 
+	        }  
+	        System.out.println();
+	    }
+	    
+		public static void main(String[] args) 
+	    {
+		
+			 Scanner Sc= new Scanner(System.in);
+	            Dll dll= new Dll();
+	            while(true)
+	            {
+	            System.out.println("\nEnter The Choice");
+	            System.out.println("1.Insertion\n2.Deletion\n3.Search Node\n4.Display List\n5.Exit");
+	        
+	            int option = Sc.nextInt();  
+	         
+	             switch(option)
+	               {
+	                   case 1:
+	                     System.out.println("Enter the values you want to insert :");
+	                	 
+	                     dll.insert(Sc.nextInt());
+	                     break;
+	                     
+	                    case 2:
+	                     dll.delete();
+	                     System.out.println("List after deletion :");
+	                     dll.Display();
+	                 
+	                     break;
+	                	
+	                    case 3:
+	                    System.out.println("Enter the values you want to search :");
+	                    dll.search(Sc.nextInt());
+	                    break;
+	                	
+	                    case 4:
+	                    System.out.println("Nodes of doubly linked list:");  
+	                	dll.Display();
+	            	    break;
+	                    case 5:
+	                     System.exit(0);
+	                    default:
+	                	  System.out.println("This is a default Case");
+	                	  break;
+	                }  
+	                  
+	            }
+	    }
+	}
+		 
+		
+
+
+
+
+
+
+
